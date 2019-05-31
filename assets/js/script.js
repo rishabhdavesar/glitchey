@@ -1,7 +1,7 @@
 onSubmit = (event) =>{
 	let email = document.getElementById("Email").value;
 	let url = document.getElementById("ur").value;
-	fetch('https://git.heroku.com/aqueous-chamber-48923.git/register',{
+	fetch('https://git.heroku.com/sleepy-shelf-84276.git/register',{
 		method:'post',
 		headers:{'Content-Type':'application/json'},
 		body:JSON.stringify({
