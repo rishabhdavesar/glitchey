@@ -15,16 +15,15 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post('/',(req,res)=>{
-	res.send("a")
-	// const {email,url} = req.body;
-	// db('users').returning('*').insert({
-	// 	email:email,
-	// 	url:url
-	// })
-	// .then(response=>{
-	// 	res.json(response[0])
-	// })
-	// .catch(err=>res.status(400).json('unable to register'))
+	const {email,url} = req.body;
+	db('users').returning('*').insert({
+		email:email,
+		url:url
+	})
+	.then(response=>{
+		res.json(response[0])
+	})
+	.catch(err=>res.status(400).json('unable to register'))
 })
 
 app.listen(process.env.PORT || 3000,()=>{
